@@ -24,11 +24,11 @@
 	</button>
 
 	<!-- Panel de Navegación -->
-	
+
 	<aside class="panel">
 		<nav class="menu">
-			<a href="#seccion1">Sección 1</a>
-			<a href="#seccion2">Sección 2</a>
+			<a href="#seccion1">Reloj Digital y Alarma Sonora</a>
+			<a href="#seccion2">Eventos del Teclado</a>
 			<a href="#seccion3">Sección 3</a>
 			<a href="#seccion4">Sección 4</a>
 			<a href="#seccion5">Sección 5</a>
@@ -37,11 +37,20 @@
 
 	<main>
 		<section id="seccion1">
-			<h2>Sección 1</h2>
+			<h2>Reloj Digital y Alarma Sonora</h2>
+
+			<div id="reloj"></div>
+
+			<div>
+				<button id="iniciar-reloj">Iniciar Reloj</button>
+				<button id="detener-reloj">Detener Reloj</button>
+				<button id="iniciar-alarma">Iniciar Alarma</button>
+				<button id="detener-alarma">Detener Alarma</button>
+			</div>
 		</section>
 
 		<section id="seccion2">
-			<h2>Sección 2</h2>
+			<h2>Eventos del Teclado</h2>
 		</section>
 
 		<section id="seccion3">
@@ -57,8 +66,8 @@
 		</section>
 	</main>
 
-	<script src="js/index_dom.js"></script>
 	<script src="js/menu_hamburguesa.js"></script>
+	<script src="js/reloj.js"></script>
 </body>
 
 </html>

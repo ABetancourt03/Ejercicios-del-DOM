@@ -72,7 +72,7 @@ section {
 .panel {
   position: fixed;
   background-color: var(--second-modal-color);
-  width: 15%;
+  width: 18%;
 }
 
 .panel.is-active {
@@ -94,7 +94,7 @@ section {
 }
 
 .panel-btn:hover {
-  cursor: pointer
+  cursor: pointer;
 }
 
 .menu {
@@ -105,14 +105,14 @@ section {
   display: block;
   text-decoration: none;
   color: var(--main-color);
-  font-size: 20px;
-  padding: 5px;
-  text-align: center;
+  font-size: 16px;
+  padding: 12px;
+  text-align: left;
 }
 
 .menu a:hover {
-  background-color: var(--main-modal-color);
-  color: var(--second-modal-color);
+  background-color: var(--main-color);
+  color: var(--second-color);
 }
 
 @media (max-width: 960px) {
