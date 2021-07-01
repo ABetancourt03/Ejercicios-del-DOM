@@ -6,6 +6,7 @@
   --second-color: #222;
   --main-modal-color: rgba(247, 222, 30, 0.85);
   --second-modal-color: rgba(34, 34, 34, 0.85);
+  --main-super-modal-color: rgba(247, 222, 30, 0.50);
   --container-width: 1200px;
 }
 
@@ -62,7 +63,7 @@ section {
   padding: 2rem;
   padding-top: 4rem;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: 0;
   width: 100%;
   max-width: var(--container-width);
   min-height: 100vh;
@@ -115,9 +116,23 @@ section {
   color: var(--second-color);
 }
 
+/* Eventos del Teclado */
+.stage {
+  display: flex;
+  min-height: 50vh;
+  max-width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--second-color);
+}
+
 @media (max-width: 960px) {
 .header h1 {
   text-align: center;
+}
+
+section {
+  margin-right: auto;
 }
 
 .panel {
@@ -144,6 +159,7 @@ section {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
+  border: none;
   padding: 0;
   display: block;
   justify-content: center;
@@ -152,11 +168,11 @@ section {
 }
 
 .panel-btn:hover {
-  cursor: pointer
+  cursor: pointer;
+  background-color: var(--main-super-modal-color);
 }
 
 .menu {
-
 }
 
 .menu a {
@@ -168,11 +184,7 @@ section {
   text-align: center;
 }
 
-.menu a:hover {
+.menu a:hover { 
   background-color: var(--main-modal-color);
   color: var(--second-modal-color);
-}
-
-section {
-  margin-left: auto;
 }
