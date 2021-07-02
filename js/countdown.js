@@ -16,8 +16,6 @@ function countdown(limitDate = "July 22, 2021 00:00:00", finalMessage = "🎉�
 
 		$countdown.innerHTML = `<h3>🎉🎂 Faltan: ${dias} días ${horas} horas ${minutos} minutos y ${segundos} segundos, para mi Cumpleaños 🎂🎉</h3>`;
 
-		console.log(time);
-
 	if (limitTime < 0) {
 		clearInterval(countTime);
 		$countdown.innerHTML = `<h3>${finalMessage}</h3>`;
