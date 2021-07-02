@@ -76,9 +76,6 @@ section {
   width: 19%;
 }
 
-.panel.is-active {
-}
-
 .panel-btn {
   position: fixed;
   z-index: 998;
@@ -96,9 +93,9 @@ section {
 
 .panel-btn:hover {
   cursor: pointer;
-}
-
-.menu {
+  transition: 0.3s;
+  background-color: var(--second-color);
+  color: var(--main-color);
 }
 
 .menu a {
@@ -114,6 +111,7 @@ section {
   font-weight: bold;
   background-color: var(--main-color);
   color: var(--second-color);
+  transition: 0.3s;
 }
 
 /* Eventos del Teclado */
@@ -134,8 +132,30 @@ section {
   background-color: var(--main-color);
 }
 
-/* Para pantallas de 960px hacia abajo */
+/* Boton Scroll Top */
 
+.btnScrollTop {
+  position: fixed;
+  z-index: 998;
+  bottom: 1vh;
+  right: 1vw;
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  border: none;
+  font-size: 2rem;
+  font-weight: bold;
+  transition: 0.3s
+}
+
+.btnScrollTop:hover {
+  cursor: pointer;
+  background-color: var(--second-color);
+  color: var(--main-color);
+}
+
+/* Para pantallas de 960px hacia abajo */
 @media (max-width: 960px) {
 .header h1 {
   text-align: center;
@@ -182,9 +202,6 @@ section {
   background-color: var(--main-super-modal-color);
 }
 
-.menu {
-}
-
 .menu a {
   display: block;
   text-decoration: none;
@@ -205,4 +222,8 @@ section {
   margin-right: auto;
   margin-left: auto;
   background-color: var(--second-color); 
+}
+
+.btnScrollTop {
+  right: calc(4.25rem + 1vw);
 }
