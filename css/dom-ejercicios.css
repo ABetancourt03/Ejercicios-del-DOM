@@ -126,6 +126,16 @@ section {
   background-color: var(--second-color);
 }
 
+.ball {
+  margin: auto;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  background-color: var(--main-color);
+}
+
+/* Para pantallas de 960px hacia abajo */
+
 @media (max-width: 960px) {
 .header h1 {
   text-align: center;
@@ -187,4 +197,12 @@ section {
 .menu a:hover { 
   background-color: var(--main-modal-color);
   color: var(--second-modal-color);
+}
+
+.stage {
+  display: flex;
+  min-height: 50vh;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: var(--second-color); 
 }
