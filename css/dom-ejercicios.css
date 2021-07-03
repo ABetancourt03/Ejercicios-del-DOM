@@ -289,7 +289,7 @@ section {
   }
 
   /* Boton de Dark Mode */
-  .btnDarkMode {
+  /* .btnDarkMode {
     position: fixed;
     z-index: 998;
     top: 89.5vh;
@@ -308,5 +308,5 @@ section {
     cursor: pointer;
     background-color: var(--second-color);
     color: var(--main-color);
-  }
+  }*/
 }
