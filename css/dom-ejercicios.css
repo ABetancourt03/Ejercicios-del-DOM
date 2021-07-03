@@ -6,7 +6,7 @@
   --second-color: #222;
   --main-modal-color: rgba(247, 222, 30, 0.85);
   --second-modal-color: rgba(34, 34, 34, 0.85);
-  --main-super-modal-color: rgba(247, 222, 30, 0.50);
+  --main-super-modal-color: rgba(247, 222, 30, 0.5);
   --container-width: 1200px;
 }
 
@@ -40,8 +40,7 @@ video {
   align-items: center;
 }
 
-/* **********     menu-hamburguesa     ********** */
-
+/* **********     Menu de Hamburguesa     ********** */
 .header {
   position: sticky;
   top: 0;
@@ -114,6 +113,12 @@ section {
   transition: 0.3s;
 }
 
+/* Dark Mode */
+.darkMode {
+  background-color: var(--second-modal-color);
+  color: var(--main-color);
+}
+
 /* Eventos del Teclado */
 .stage {
   display: flex;
@@ -133,7 +138,6 @@ section {
 }
 
 /* Boton Scroll Top */
-
 .btnScrollTop {
   position: fixed;
   z-index: 998;
@@ -146,7 +150,7 @@ section {
   border: none;
   font-size: 2rem;
   font-weight: bold;
-  transition: 0.3s
+  transition: 0.3s;
 }
 
 .btnScrollTop:hover {
@@ -155,75 +159,120 @@ section {
   color: var(--main-color);
 }
 
-/* Para pantallas de 960px hacia abajo */
-@media (max-width: 960px) {
-.header h1 {
-  text-align: center;
-}
-
-section {
-  margin-right: auto;
-}
-
-.panel {
-  position: fixed;
-  background-color: var(--second-modal-color);
-  width: 100%;
-  height: 100%;
-  display: none;
-}
-
-.panel-on {
-  position: fixed;
-  background-color: var(--second-modal-color);
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.panel-btn {
+/* Boton de Dark Mode */
+.btnDarkMode {
   position: fixed;
   z-index: 998;
-  bottom: 1vh;
+  top: 11vh;
   right: 1vw;
   width: 4rem;
   height: 4rem;
+  background-color: var(--main-color);
   border-radius: 50%;
   border: none;
-  padding: 0;
-  display: block;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--main-color);
+  font-size: 2.5rem;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-.panel-btn:hover {
+.btnDarkMode:hover {
   cursor: pointer;
-  background-color: var(--main-super-modal-color);
-}
-
-.menu a {
-  display: block;
-  text-decoration: none;
+  background-color: var(--second-color);
   color: var(--main-color);
-  font-size: 20px;
-  padding: 10px;
-  text-align: center;
 }
 
-.menu a:hover { 
-  background-color: var(--main-modal-color);
-  color: var(--second-modal-color);
-}
+/* Para pantallas de 960px hacia abajo */
+@media (max-width: 960px) {
+  .header h1 {
+    text-align: center;
+  }
 
-.stage {
-  display: flex;
-  min-height: 50vh;
-  margin-right: auto;
-  margin-left: auto;
-  background-color: var(--second-color); 
-}
+  section {
+    margin-right: auto;
+  }
 
-.btnScrollTop {
-  right: calc(4.25rem + 1vw);
+  .panel {
+    position: fixed;
+    background-color: var(--second-modal-color);
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+
+  .panel-on {
+    position: fixed;
+    background-color: var(--second-modal-color);
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .panel-btn {
+    position: fixed;
+    z-index: 998;
+    bottom: 1vh;
+    right: 1vw;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+  }
+
+  .panel-btn:hover {
+    cursor: pointer;
+    background-color: var(--main-super-modal-color);
+  }
+
+  .menu a {
+    display: block;
+    text-decoration: none;
+    color: var(--main-color);
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .menu a:hover {
+    background-color: var(--main-modal-color);
+    color: var(--second-modal-color);
+  }
+
+  .stage {
+    display: flex;
+    min-height: 50vh;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: var(--second-color);
+  }
+
+  .btnScrollTop {
+    right: calc(4.25rem + 1vw);
+  }
+
+  /* Boton de Dark Mode */
+  .btnDarkMode {
+    position: fixed;
+    z-index: 998;
+    top: 89.5vh;
+    left: 1vw;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    border: none;
+    font-size: 2.5rem;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .btnDarkMode:hover {
+    cursor: pointer;
+    background-color: var(--second-color);
+    color: var(--main-color);
+  }
 }
