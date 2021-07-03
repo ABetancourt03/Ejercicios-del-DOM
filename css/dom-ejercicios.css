@@ -40,13 +40,24 @@ video {
   align-items: center;
 }
 
-/* **********     Menu de Hamburguesa     ********** */
 .header {
   position: sticky;
   top: 0;
   padding: 1rem;
   background-color: var(--main-color);
   color: var(--second-color);
+  width: 100%;
+  text-align: center;
+  left: 0;
+  z-index: 999;
+}
+
+.headerDark {
+  position: sticky;
+  top: 0;
+  padding: 1rem;
+  background-color: var(--second-color);
+  color: var(--main-color);
   width: 100%;
   text-align: center;
   left: 0;
@@ -69,7 +80,14 @@ section {
   text-align: center;
 }
 
+/* **********     Menu de Hamburguesa     ********** */
 .panel {
+  position: fixed;
+  background-color: var(--main-color);
+  width: 19%;
+}
+
+.panelDark {
   position: fixed;
   background-color: var(--second-color);
   width: 19%;
@@ -100,6 +118,15 @@ section {
 .menu a {
   display: block;
   text-decoration: none;
+  color: var(--second-color);
+  font-size: 16px;
+  padding: 12px;
+  text-align: left;
+}
+
+.menuDark a {
+  display: block;
+  text-decoration: none;
   color: var(--main-color);
   font-size: 16px;
   padding: 12px;
@@ -107,6 +134,13 @@ section {
 }
 
 .menu a:hover {
+  font-weight: bold;
+  background-color: var(--second-color);
+  color: var(--main-color);
+  transition: 0.3s;
+}
+
+.menuDark a:hover {
   font-weight: bold;
   background-color: var(--main-color);
   color: var(--second-color);
