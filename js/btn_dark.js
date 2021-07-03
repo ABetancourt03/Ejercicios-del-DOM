@@ -6,34 +6,79 @@ const $menu = document.querySelector(".menu");
 
 $btnDarkMode.addEventListener("click", btnDarkMode);
 
+// Boton Dark/Light
+const btnLight = () => {
+  $body.classList.remove("darkMode");
+};
+
+const btnDark = () => {
+  $body.classList.add("darkMode");
+};
+
+// Texto Dark/Light
+const btnTextLight = () => {
+  $btnDarkMode.innerHTML = "☀️";
+};
+
+const btnTextDark = () => {
+  $btnDarkMode.innerHTML = "🌙";
+};
+
+// Header Dark/Light
+const headerLight = () => {
+  $header.classList.remove("headerDark");
+};
+
+const headerDark = () => {
+  $header.classList.add("headerDark");
+};
+
+// Panel Dark/Light
+const panelLight = () => {
+  $panelNav.classList.remove("panelDark");
+};
+
+const panelDark = () => {
+  $panelNav.classList.add("panelDark");
+};
+
+// Menu Dark/Light
+const menuLight = () => {
+  $menu.classList.remove("menuDark");
+};
+
+const menuDark = () => {
+  $menu.classList.add("menuDark");
+};
+
 function btnDarkMode(e) {
   if ($body.classList.contains("darkMode")) {
-    $body.classList.remove("darkMode");
+    btnLight();
   } else {
-    $body.classList.add("darkMode");
+    btnDark();
   }
 
   if ($body.classList.contains("darkMode")) {
-    $btnDarkMode.innerHTML = "☀️";
+    btnTextLight();
   } else {
-    $btnDarkMode.innerHTML = "🌙";
+    btnTextDark();
   }
 
   if ($header.classList.contains("headerDark")) {
-    $header.classList.remove("headerDark");
+    headerLight();
   } else {
-    $header.classList.add("headerDark");
+    headerDark();
   }
 
   if ($panelNav.classList.contains("panelDark")) {
-    $panelNav.classList.remove("panelDark");
+    panelLight();
   } else {
-    $panelNav.classList.add("panelDark");
+    panelDark();
   }
 
   if ($menu.classList.contains("menuDark")) {
-    $menu.classList.remove("menuDark");
+    menuLight();
   } else {
-    $menu.classList.add("menuDark");
+    menuDark();
   }
 }
