@@ -2,8 +2,8 @@ const d = document;
 const w = window;
 
 // Menu Hamburguesa
-const $panelBtn = document.querySelector(".panel-btn").addEventListener("click", panelBtn);
-const $panel = document.querySelector(".panel");
+const $panelBtn = d.querySelector(".panel-btn").addEventListener("click", panelBtn);
+const $panel = d.querySelector(".panel");
 
 function panelBtn(e) {
   if ($panel.classList.contains("panel-on")) {
@@ -14,8 +14,8 @@ function panelBtn(e) {
 }
 
 // Eventos del Teclado
-const keyDown = document.addEventListener("keydown", shorcuts);
-const $ball = document.querySelector(".ball").addEventListener("keydown", moverBall);
+const keyDown = d.addEventListener("keydown", shorcuts);
+const $ball = d.querySelector(".ball").addEventListener("keydown", moverBall);
 
 function shorcuts(e) {
   if (e.key === "a" && e.altKey) {
@@ -114,7 +114,7 @@ function countdown(
 countdown();
 
 // Boton de Scroll Top
-const $scrollbtn = document.querySelector(".btnScrollTop").addEventListener("click", scrollBtn);
+const $scrollbtn = d.querySelector(".btnScrollTop").addEventListener("click", scrollBtn);
 
 function scrollBtn(e) {
   if (e.target) {
@@ -212,3 +212,33 @@ function btnDarkMode(e) {
 }
 
 // Responsive con JavaScript
+function responsiveMedia(id, mq, mobileContent, desktopContent) {
+  let breakpoint = w.matchMedia(mq);
+
+  const responsive = (e) => {
+    if (e.matches) {
+      d.getElementById(id).innerHTML = desktopContent;
+    } else {
+      d.getElementById(id).innerHTML = mobileContent;
+    }
+  };
+
+  breakpoint.addListener(responsive);
+  responsive(breakpoint);
+}
+
+responsiveMedia(
+  "youtube",
+  "(min-width: 1024px)",
+  `<a href="https://www.youtube.com/watch?v=6IwUl-4pAzc&list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA" target="_blank" rel="noopener">Ver Video</a>`,
+  `<iframe width="560" height="315" src="https://www.youtube.com/embed/6IwUl-4pAzc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+);
+
+responsiveMedia(
+  "gmaps",
+  "(min-width: 1024px)",
+  `<a href="https://goo.gl/maps/zdLq8hQAqJLStFsNA" target="_blank" rel="noopener">Ver Mapa</a>`,
+  `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.7764082144386!2d-118.3947239853014!3d34.02394982666896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b987640d7223%3A0xfd01d00d0eaa5a21!2sAmazon%20Studios!5e0!3m2!1ses!2sve!4v1625452347929!5m2!1ses!2sve" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`
+);
+
+// Responsive Tester
