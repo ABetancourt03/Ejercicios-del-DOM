@@ -75,7 +75,7 @@ section {
   padding: 2rem;
   padding-top: 4rem;
   margin-left: auto;
-  margin-right: 0;
+  margin-right: auto;
   width: 100%;
   max-width: var(--container-width);
   min-height: 100vh;
