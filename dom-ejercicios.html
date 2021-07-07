@@ -81,16 +81,22 @@
     <section id="seccion5">
       <h2>Responsive Tester</h2>
 
-      <input id="link" type="url" placeholder="URL"><br>
-      <input id="width" type="number" placeholder="Ancho"><br>
-      <input id="height" type="number" placeholder="Alto"><br>
-
-      <button type="submit" id="test">Probar</button>
-      <button id="close">Cerrar</button>
+      <form id="responsive-tester">
+        <input name="direccion" type="url" placeholder="URL" required>
+        <br>
+        <input name="ancho" type="text" placeholder="Ancho" required>
+        <br>
+        <input name="alto" type="text" placeholder="Alto" required>
+        <br>
+        <input name="probar" type="submit" value="Probar">
+        <input name="cerrar" type="button" value="Cerrar">
+      </form>
     </section>
 
     <section id="seccion6">
-      <h2>Detección de Dispositivos (User Agent)</h2>
+      <h2>Detección de Dispositivos<br>(User Agent)</h2>
+
+      <div id="user-device"></div>
     </section>
 
     <section id="seccion7">

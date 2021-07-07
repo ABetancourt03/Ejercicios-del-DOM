@@ -208,7 +208,7 @@ section {
   background-color: var(--main-color);
   border-radius: 50%;
   border: none;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   transition: 0.3s;
 }
@@ -218,6 +218,8 @@ section {
   background-color: var(--second-color);
   color: var(--main-color);
 }
+
+/* Responsive Tester */
 
 /* Para pantallas de 960px hacia abajo */
 @media (max-width: 960px) {
