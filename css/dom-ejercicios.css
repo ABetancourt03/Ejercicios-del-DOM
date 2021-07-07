@@ -267,8 +267,8 @@ section {
 
   .panel-btn {
     position: fixed;
-    z-index: 998;
-    bottom: 1vh;
+    z-index: 999;
+    top: auto;
     right: 1vw;
     width: 4rem;
     height: 4rem;
@@ -308,25 +308,17 @@ section {
     background-color: var(--second-color);
   }
 
-  .btnScrollTop {
-    right: calc(4.25rem + 1vw);
-  }
-
   /* Boton de Dark Mode */
   .btnDarkMode {
     position: fixed;
     z-index: 999;
-    top: 0.4vh;
-    right: 1vw;
+    top: 11vh;
+    left: auto;
     border: none;
     font-size: 2rem;
     font-weight: bold;
     transition: 0.3s;
   }
 
-  /*.btnDarkMode:hover {
-    cursor: pointer;
-    background-color: var(--second-color);
-    color: var(--main-color);
-  }*/
+  /* Botones del reloj */
 }
