@@ -314,3 +314,79 @@ function userDeviceInfo(id) {
 }
 
 userDeviceInfo("user-device");
+
+// Deteccion de la conexion
+
+function networkStatus() {
+    const isOnLine = () => {
+        const $div = d.createElement("div");
+        
+        if (n.onLine) {
+            $div.textContent = "Conexión Reestablecida"
+            $div.classList.add("online");
+            $div.classList.remove("offline");
+        } else {
+            $div.textContent = "Conexión Perdida"
+            $div.classList.add("offline");
+            $div.classList.remove("online");
+        }
+
+        d.body.insertAdjacentElement("afterbegin", $div);
+        setTimeout(() => d.body.removeChild($div), 2000);
+    };
+    
+    w.addEventListener("online", (e) => isOnLine());
+    w.addEventListener("offline", (e) => isOnLine());
+}
+
+networkStatus();
+
+// Deteccion de Camara
+/* function webCam(id) {
+    const $video = d.getElementById(id);
+
+    if (n.mediaDevices.getUserMedia()) {
+        n.mediaDevices.getUserMedia({video:true, audio:true})
+            .then(stream => {
+                console.log(stream);
+                $video.srcObject = stream;
+                $video.play();
+            })
+            .catch((err) => console.log(`Sucedio el siguiente error!: ${err}`));
+    }
+}
+
+webCam("webcam"); */
+
+// Geolocalizacion
+
+function getGeolocation(id) {
+    const $id = d.getElementById(id);
+    const options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+    };
+    const success = (position) => {
+        let coords = position.coords;
+
+        $id.innerHTML = `<p>Tu posicion antual es:</p>
+
+            Latitud: <b>${coords.latitude}</b><br>
+            Longitud: <b>${coords.longitude}</b><br>
+            Precicion: <b>${coords.accuracy}</b> metros<br>
+            <br>
+        <a href="https://www.google.com/maps/@${coords.latitude},
+            ${coords.longitude}, 15z" target="_blank" rel="noopener">Ver en Google Maps</a>`;}
+
+    const error = (err) => {$id.innerHTML = `<p><mark>Error ${err.code}: ${err.message}</mark></p>`}
+
+    n.geolocation.getCurrentPosition(success, error, options);
+}
+
+getGeolocation("geolocation");
+
+// Filtros de Busquedas
+
+
+

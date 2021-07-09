@@ -239,6 +239,24 @@ section {
   margin-right: 30px;
 }
 
+/* Deteccion de la coneccion */
+.online,
+.offline {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: #1b5e20;
+  color: #fff;
+}
+
+.offline {
+  background-color: #b71c1c;
+}
+
 /* Para pantallas de 960px hacia abajo */
 @media (max-width: 960px) {
   .header h1 {
@@ -268,7 +286,7 @@ section {
   .panel-btn {
     position: fixed;
     z-index: 999;
-    top: auto;
+    top: 0vh;
     right: 1vw;
     width: 4rem;
     height: 4rem;
@@ -283,7 +301,6 @@ section {
 
   .panel-btn:hover {
     cursor: pointer;
-    background-color: var(--main-super-modal-color);
   }
 
   .menu a {
@@ -312,8 +329,8 @@ section {
   .btnDarkMode {
     position: fixed;
     z-index: 999;
-    top: 11vh;
-    left: auto;
+    top: 0vh;
+    right: 1vw;
     border: none;
     font-size: 2rem;
     font-weight: bold;
