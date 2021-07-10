@@ -318,25 +318,25 @@ userDeviceInfo("user-device");
 // Deteccion de la conexion
 
 function networkStatus() {
-    const isOnLine = () => {
-        const $div = d.createElement("div");
-        
-        if (n.onLine) {
-            $div.textContent = "Conexión Reestablecida"
-            $div.classList.add("online");
-            $div.classList.remove("offline");
-        } else {
-            $div.textContent = "Conexión Perdida"
-            $div.classList.add("offline");
-            $div.classList.remove("online");
-        }
+  const isOnLine = () => {
+    const $div = d.createElement("div");
 
-        d.body.insertAdjacentElement("afterbegin", $div);
-        setTimeout(() => d.body.removeChild($div), 2000);
-    };
-    
-    w.addEventListener("online", (e) => isOnLine());
-    w.addEventListener("offline", (e) => isOnLine());
+    if (n.onLine) {
+      $div.textContent = "Conexión Reestablecida";
+      $div.classList.add("online");
+      $div.classList.remove("offline");
+    } else {
+      $div.textContent = "Conexión Perdida";
+      $div.classList.add("offline");
+      $div.classList.remove("online");
+    }
+
+    d.body.insertAdjacentElement("afterbegin", $div);
+    setTimeout(() => d.body.removeChild($div), 2000);
+  };
+
+  w.addEventListener("online", (e) => isOnLine());
+  w.addEventListener("offline", (e) => isOnLine());
 }
 
 networkStatus();
@@ -361,54 +361,105 @@ webCam("webcam"); */
 // Geolocalizacion
 
 function getGeolocation(id) {
-    const $id = d.getElementById(id);
-    const options = {
-        enableHighAccuracy: true,
-        timeout: 5000,
-        maximumAge: 0
-    };
-    const success = (position) => {
-        let coords = position.coords;
+  const $id = d.getElementById(id);
+  const options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0,
+  };
+  const success = (position) => {
+    let coords = position.coords;
 
-        $id.innerHTML = `<p>Tu posicion antual es:</p>
+    $id.innerHTML = `<p>Tu posicion antual es:</p>
 
             Latitud: <b>${coords.latitude}</b><br>
             Longitud: <b>${coords.longitude}</b><br>
             Precicion: <b>${coords.accuracy}</b> metros<br>
             <br>
         <a href="https://www.google.com/maps/@${coords.latitude},
-            ${coords.longitude}, 15z" target="_blank" rel="noopener">Ver en Google Maps</a>`;}
+            ${coords.longitude}, 15z" target="_blank" rel="noopener">Ver en Google Maps</a>`;
+  };
 
-    const error = (err) => {$id.innerHTML = `<p><mark>Error ${err.code}: ${err.message}</mark></p>`}
+  const error = (err) => {
+    $id.innerHTML = `<p><mark>Error ${err.code}: ${err.message}</mark></p>`;
+  };
 
-    n.geolocation.getCurrentPosition(success, error, options);
+  n.geolocation.getCurrentPosition(success, error, options);
 }
 
 getGeolocation("geolocation");
 
 // Filtros de Busquedas
 function searchFilters(input, selector) {
-    d.addEventListener("keyup", (e) => {
-        if (e.target.matches(input)) {
+  d.addEventListener("keyup", (e) => {
+    if (e.target.matches(input)) {
+      if (e.key === "Escape") e.target.value = "";
 
-            if (e.key === "Escape") e.target.value = "";
-
-            d.querySelectorAll(selector).forEach(el => (el.textContent.toLowerCase().includes(e.target.value))
-                ? el.classList.remove("filter")
-                : el.classList.add("filter"));
-        }
-    });
+      d.querySelectorAll(selector).forEach((el) =>
+        el.textContent.toLowerCase().includes(e.target.value)
+          ? el.classList.remove("filter")
+          : el.classList.add("filter")
+      );
+    }
+  });
 }
 
 searchFilters(".card-filter", ".card");
 
+// Sorteo Digital
 
+function draw(btn, selector) {
+  const getWinner = (selector) => {
+    const $players = d.querySelectorAll(selector);
+    const random = Math.floor(Math.random() * $players.length);
+    const winner = $players[random];
 
+    return `El ganador es: ${winner.textContent}`;
+  };
 
+  d.addEventListener("click", (e) => {
+    if (e.target.matches(btn)) {
+      let result = getWinner(selector);
+      alert(result);
+    }
+  });
+}
 
+draw("#winner-btn", ".player");
 
+// Responsive Slider
+function slider() {
+  const $nextBtn = d.querySelector(".slider-btns .next");
+  const $prevBtn = d.querySelector(".slider-btns .prev");
+  const $slides = d.querySelectorAll(".slider-slide");
 
+  let i = 0;
 
+  d.addEventListener("click", (e) => {
+    if (e.target === $prevBtn) {
+      e.preventDefault();
+      $slides[i].classList.remove("active");
+      i--;
 
+      if (i < 0) {
+        i = $slides.length - 1;
+      }
 
+      $slides[i].classList.add("active");
+    }
 
+    if (e.target === $nextBtn) {
+      e.preventDefault();
+      $slides[i].classList.remove("active");
+      i++;
+
+      if (i >= $slides.length) {
+        i = 0;
+      }
+
+      $slides[i].classList.add("active");
+    }
+  });
+}
+
+slider();
