@@ -5,7 +5,7 @@ const ua = n.userAgent;
 // Menu Hamburguesa
 const $panelBtn = d.querySelector(".panel-btn").addEventListener("click", panelBtn);
 const $panel = d.querySelector(".panel");
-d.addEventListener("scroll", cerrarMenu);
+// d.addEventListener("scroll", cerrarMenu);
 
 function panelBtn(e) {
   if ($panel.classList.contains("panel-on")) {
@@ -15,9 +15,9 @@ function panelBtn(e) {
   }
 }
 
-function cerrarMenu() {
+/*function cerrarMenu() {
   $panel.classList.remove("panel-on");
-}
+}*/
 
 // Eventos del Teclado
 const keyDown = d.addEventListener("keydown", shorcuts);
@@ -463,3 +463,29 @@ function slider() {
 }
 
 slider();
+
+// ScrollSpy
+function scrollSpy() {
+  const $sections = d.querySelectorAll("section[data-scroll-spy]");
+  
+  const cb = (entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute("id");
+
+      if (entry.isIntersecting) {
+	d.querySelector(`a[data-scroll-spy][href="#${id}"]`).classList.add("active");
+      } else {
+	d.querySelector(`a[data-scroll-spy][href="#${id}"]`).classList.remove("active");
+      }
+    })
+  }
+
+  const observer = new IntersectionObserver(cb, {
+    threshold: [0.5, 0.75]
+  });
+
+  $sections.forEach(el => observer.observe(el));
+}
+
+scrollSpy();
+
