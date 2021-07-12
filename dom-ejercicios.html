@@ -223,14 +223,14 @@
     <section id="seccion14" data-scroll-spy>
       <h2>Validaciones de Formulario</h2>
 
-      <form class="contact-form">
+      <form class="contact-form" action="https://formsubmit.co/angelob2207@gmail.com" method="POST" target="_blank">
         <legend>Envianos tus comentarios</legend>
 
         <input type="text" name="name" placeholder="Escribe tu nombre" title="Nombre solo acepta letras y espacion en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
 
         <input type="email" name="email" placeholder="Escribe tu email" title="Email incorrecto" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
 
-        <input type="text" name="subject" placeholder="Asunto a tratar" title="El Asunto requerido" required>
+        <input type="text" name="subject" placeholder="Asunto a tratar" title="El Asunto es requerido" required>
 
         <textarea name="comments" cols="50" rows="5" placeholder="Escribe tus comentarios" title="Tu comentario no debe exceder los 255 caracteres" data-pattern="^.{1,255}$" required></textarea>
 
@@ -241,7 +241,7 @@
         </div>
 
         <div class="contact-form-response none">
-          <p>Los datos han sido enviados</p>
+          <p>Los datos han sido enviados correctamente</p><img src="assets/img/check.png" width="32px">
         </div>
       </form>
     </section>
