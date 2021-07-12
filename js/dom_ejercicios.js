@@ -316,7 +316,6 @@ function userDeviceInfo(id) {
 userDeviceInfo("user-device");
 
 // Deteccion de la conexion
-
 function networkStatus() {
   const isOnLine = () => {
     const $div = d.createElement("div");
@@ -359,7 +358,6 @@ networkStatus();
 webCam("webcam"); */
 
 // Geolocalizacion
-
 function getGeolocation(id) {
   const $id = d.getElementById(id);
   const options = {
@@ -407,7 +405,6 @@ function searchFilters(input, selector) {
 searchFilters(".card-filter", ".card");
 
 // Sorteo Digital
-
 function draw(btn, selector) {
   const getWinner = (selector) => {
     const $players = d.querySelectorAll(selector);
@@ -515,4 +512,6 @@ function smartVideo() {
 }
 
 smartVideo();
+
+// Validaciones de Formulario
 

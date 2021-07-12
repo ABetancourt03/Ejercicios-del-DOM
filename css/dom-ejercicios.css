@@ -50,7 +50,7 @@ video {
   text-align: center;
   left: 0;
   z-index: 999;
-  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 .headerDark {
@@ -63,7 +63,7 @@ video {
   text-align: center;
   left: 0;
   z-index: 999;
-  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 .header h1 {
@@ -91,9 +91,9 @@ section {
   width: 20vw;
   height: 100%;
   display: none;
-  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
   z-index: 998;
-  top: 4rem;
+  top: 4.2rem;
 }
 
 .panel-on {
@@ -102,8 +102,7 @@ section {
   width: 20vw;
   height: 100%;
   display: block;
-  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
-  z-index: 998;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
 }
 
 .panelDark {
@@ -112,9 +111,9 @@ section {
   width: 20vw;
   height: 100%;
   display: none;
-  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
-  z-index: 998;
-  top: 4rem;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  top: 4.2rem;
 }
 
 .panel-btn {
@@ -143,7 +142,7 @@ section {
   text-decoration: none;
   color: var(--main-color);
   font-size: 15px;
-  padding: 10.5px;
+  padding: 10px;
   text-align: left;
 }
 
@@ -353,6 +352,101 @@ section {
 
 .slider a:hover {
   color: #4d4d4d
+}
+
+/* Validaciones de Formularios */
+.contact-form {
+  --form-ok-color: #4caf50;
+  --form-error-color: #f44336;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.contact-form > * {
+  padding: 0.5rem;
+  margin: 1rem auto;
+  display: block;
+  width: 100%;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form legend,
+.contact-form-response {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-size: 1rem;
+  font-family: sans-serif;
+  border-radius: 5px;
+}
+
+.contact-form input[type="submit"] {
+  width: 10%;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  border: thin solid var(--form-ok-color);
+  border-width: 0.18rem;
+  background: none;
+  color: var(--form-ok-color);
+  transition: 0.3s;
+}
+
+.contact-form input[type="submit"]:hover {
+  color: white;
+  background-color: var(--form-ok-color);
+  transition: 0.3s;
+}
+
+.contact-form *::placeholder {
+  color: #000;
+}
+
+.contact-form [required]:valid {
+  border: thin solid var(--form-ok-color);
+  border-width: 0.18rem;
+}
+
+.contact-form [required]:invalid {
+  border: thin solid var(--form-error-color);
+  border-width: 0.18rem;
+}
+
+.contact-form-error {
+  margin-top: -1rem;
+  font-size: 80%;
+  background-color: var(--form-error-color);
+  color: #fff;
+  transition: all 800ms ease;
+}
+
+.contact-form-error.is-active {
+  display: block;
+  animation: show-message 1s 1 normal 0s ease-out both;
+}
+
+.none {
+  display: none;
+}
+
+@keyframes show-message {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 /* Para pantallas de 960px hacia abajo */
