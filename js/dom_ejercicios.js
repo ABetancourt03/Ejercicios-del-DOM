@@ -37,7 +37,7 @@ function shorcuts(e) {
   }
 }
 
-function moverBall(e) {}
+function moverBall(e) { }
 
 // Reloj Digital
 const $btnIniciarReloj = d
@@ -93,7 +93,7 @@ function btnDetenerAlarma(e) {
 const $countdown = d.getElementById("countdown");
 
 function countdown(
-  limitDate = "July 22, 2021 00:00:00",
+  limitDate = "July 22, 2022 00:00:00",
   finalMessage = "🎉🎂 Feliz Cumpleaños, pequeño programador 🎂🎉"
 ) {
   const time = new Date(limitDate).getTime();
@@ -464,15 +464,15 @@ slider();
 // ScrollSpy
 function scrollSpy() {
   const $sections = d.querySelectorAll("section[data-scroll-spy]");
-  
+
   const cb = (entries) => {
     entries.forEach(entry => {
       const id = entry.target.getAttribute("id");
 
       if (entry.isIntersecting) {
-	d.querySelector(`a[data-scroll-spy][href="#${id}"]`).classList.add("active");
+        d.querySelector(`a[data-scroll-spy][href="#${id}"]`).classList.add("active");
       } else {
-	d.querySelector(`a[data-scroll-spy][href="#${id}"]`).classList.remove("active");
+        d.querySelector(`a[data-scroll-spy][href="#${id}"]`).classList.remove("active");
       }
     })
   }
@@ -489,24 +489,24 @@ scrollSpy();
 // Video Inteligente
 function smartVideo() {
   const $videos = d.querySelectorAll("video[data-smart-video]");
-  
+
   const cb = (entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-	entry.target.play();	
+        entry.target.play();
       } else {
-	entry.target.pause();
+        entry.target.pause();
       }
 
       w.addEventListener("visibilitychange", (e) =>
-	d.visibilityState === "visible"
-	  ? entry.target.play()
-	  : entry.target.pause()
+        d.visibilityState === "visible"
+          ? entry.target.play()
+          : entry.target.pause()
       );
     });
   }
 
-  const observer = new IntersectionObserver(cb, {threshold: 0.5});
+  const observer = new IntersectionObserver(cb, { threshold: 0.5 });
 
   $videos.forEach(el => observer.observe(el));
 }
@@ -532,18 +532,18 @@ function contacFormValidations() {
       let $input = e.target,
         pattern = $input.pattern || $input.dataset.pattern;
 
-        if (pattern && $input.value !== "") {
-          let regex = new RegExp(pattern);
-          return !regex.exec($input.value)
-            ? d.getElementById($input.name).classList.add("is-active")
-            : d.getElementById($input.name).classList.remove("is-active");
-        }
+      if (pattern && $input.value !== "") {
+        let regex = new RegExp(pattern);
+        return !regex.exec($input.value)
+          ? d.getElementById($input.name).classList.add("is-active")
+          : d.getElementById($input.name).classList.remove("is-active");
+      }
 
-        if (!pattern) {
-          return $input.value === ""
-            ? d.getElementById($input.name).classList.add("is-active")
-            : d.getElementById($input.name).classList.remove("is-active");
-        }
+      if (!pattern) {
+        return $input.value === ""
+          ? d.getElementById($input.name).classList.add("is-active")
+          : d.getElementById($input.name).classList.remove("is-active");
+      }
     }
   });
 
@@ -554,11 +554,11 @@ function contacFormValidations() {
     $loader.classList.remove("none");
 
     setTimeout(() => {
-    $loader.classList.add("none");
-    $response.classList.remove("none");
-    $form.reset();
+      $loader.classList.add("none");
+      $response.classList.remove("none");
+      $form.reset();
 
-      setTimeout(() => {$response.classList.add("none")}, 3000);
+      setTimeout(() => { $response.classList.add("none") }, 3000);
 
     }, 3000);
   });
